@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마감 당번 정하기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="confetti-container"></div>
+    <div class="roster-app">
+        <header>
+            <h1>마감 당번 정하기</h1>
+            <p>오늘의 마감 당번을 정해 보세요!</p>
+        </header>
+
+        <main>
+            <section class="settings-section">
+                <!-- 직원 관리 섹션 -->
+                <div class="widget">
+                    <h2>직원 관리</h2>
+                    <ul id="employee-list">
+                        <!-- 직원 목록이 여기에 표시됩니다 -->
+                    </ul>
+                </div>
+
+                <!-- 당번 횟수 현황 -->
+                <div class="widget">
+                    <h2>당번 횟수 현황</h2>
+                    <ul id="duty-count-list">
+                        <!-- 당번 횟수가 여기에 표시됩니다 -->
+                    </ul>
+                </div>
+
+                <!-- 휴무 설정 섹션 -->
+                <div class="widget">
+                    <h2>요일별 휴무 설정</h2>
+                    <div id="day-off-settings">
+                        <!-- 요일별 휴무 설정이 여기에 표시됩니다 -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="controls-section">
+                <button id="generate-roster-btn">정하기!</button>
+            </section>
+
+            <section class="results-section">
+                <h2>마감 당번 결과</h2>
+                <div id="roster-results">
+                    <p>버튼을 눌러 당번을 정해주세요.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

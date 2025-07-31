@@ -1,0 +1,316 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --background-color: #f4f7f6;
+    --widget-bg-color: #ffffff;
+    --text-color: #333;
+    --light-text-color: #777;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.roster-app {
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--widget-bg-color);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.settings-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.widget {
+    background-color: var(--widget-bg-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.widget h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem; /* 간격 원복 */
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#employee-name-input {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#add-employee-btn, #generate-roster-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#add-employee-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#add-employee-btn:hover {
+    background-color: #357abd;
+}
+
+#employee-list {
+    list-style: none;
+    height: 650px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+#employee-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: grab;
+}
+
+#employee-list li:last-child {
+    border-bottom: none;
+}
+
+#duty-count-list {
+    list-style: none;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+#duty-count-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#duty-count-list li:last-child {
+    border-bottom: none;
+}
+
+.duty-count {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.main-star {
+    color: red; /* 빨간색 별 뱃지 */
+    font-size: 1.2rem; /* 크기 명확히 지정 */
+    margin-left: 0.5rem;
+}
+
+.main-star.selected {
+    color: var(--secondary-color); /* 선택 시 노란색 */
+}
+
+.main-checkbox {
+    display: none; /* 체크박스 숨기기 */
+}
+
+.main-checkbox:checked + .main-star-label .main-star {
+    color: var(--secondary-color); /* 체크 시 노란색 */
+}
+
+.main-star-label {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.remove-employee-btn {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#day-off-settings .day-off-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px dashed transparent;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#day-off-settings .day-off-row.drag-over {
+    border-color: var(--primary-color);
+    background-color: #e9f2fd;
+}
+
+#day-off-settings .day-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+#day-off-settings .employee-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    min-height: 30px; /* 드롭 영역 확보 */
+}
+
+.employee-tag {
+    background-color: #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.employee-tag.selected {
+    background-color: #fffbe6;
+    color: #c49000;
+    font-weight: bold;
+    border-color: #f5a623;
+    cursor: pointer;
+}
+
+.controls-section {
+    text-align: center;
+}
+
+#generate-roster-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 10px rgba(245, 166, 35, 0.4);
+}
+
+#generate-roster-btn:hover {
+    background-color: #e1981d;
+    transform: translateY(-2px);
+}
+
+.results-section {
+    text-align: center;
+}
+
+#roster-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+.roster-day {
+    background-color: var(--widget-bg-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.roster-day h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.roster-day ul {
+    list-style: none;
+}
+
+.roster-day li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Confetti */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    position: absolute;
+    opacity: 0.7;
+    animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}

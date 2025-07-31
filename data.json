@@ -1,0 +1,62 @@
+[
+  {
+    "name": "준식",
+    "category": "main",
+    "detail": "데스크"
+  },
+  {
+    "name": "은서",
+    "category": "main",
+    "detail": "데스크"
+  },
+  {
+    "name": "현우",
+    "category": "main",
+    "detail": "데스크"
+  },
+  {
+    "name": "나혜",
+    "category": "main",
+    "detail": "실장"
+  },
+  {
+    "name": "다나",
+    "category": "main",
+    "detail": "실장"
+  },
+  {
+    "name": "지현",
+    "category": "main",
+    "detail": "실장"
+  },
+  {
+    "name": "수연",
+    "category": "sub",
+    "detail": "실장"
+  },
+  {
+    "name": "지우",
+    "category": "sub",
+    "detail": "실장"
+  },
+  {
+    "name": "지은",
+    "category": "sub",
+    "detail": "실장"
+  },
+  {
+    "name": "소연",
+    "category": "sub",
+    "detail": "데스크"
+  },
+  {
+    "name": "사치카",
+    "category": "sub",
+    "detail": "데스크"
+  },
+  {
+    "name": "도경",
+    "category": "sub",
+    "detail": "데스크"
+  }
+]
