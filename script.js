@@ -28,6 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     "detail": "데스크"
   },
   {
+    "name": "현지",
+    "category": "sub",
+    "detail": "데스크"
+  },
+  {
     "name": "나혜",
     "category": "main",
     "detail": "실장"
@@ -54,6 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
   },
   {
     "name": "지은",
+    "category": "sub",
+    "detail": "실장"
+  },
+  {
+    "name": "혜주",
     "category": "sub",
     "detail": "실장"
   },
